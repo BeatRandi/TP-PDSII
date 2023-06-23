@@ -20,6 +20,9 @@ class Maquina_De_Busca{
       // Realiza indexação
       void indexacao_();
 
+    //retona os documentos em ordem de ocorrencia de cada plavra
+      vector<string> recuperar(vector<string> buscar);
+
 
 
    private:
