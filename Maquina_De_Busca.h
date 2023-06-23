@@ -14,24 +14,28 @@ using std::vector;
 //Algoritmo para buscar palavras em documentos
 class Maquina_De_Busca{
 
-public: 
-Maquina_De_Busca(string pasta_);
+   public: 
+      Maquina_De_Busca(string pasta_);
+
+      // Realiza indexação
+      void indexacao_();
 
 
-private:
-   //Recupera todos os documentos em dada pasta
-   vector<string> localizarDocumentos();
+
+   private:
+      //Recupera todos os documentos em dada pasta
+      vector<string> localizarDocumentos();
 
 
-private:
-// Map que conecta a chave palavra ao número de vezes que aparece
-map<string, map<string,int>> ocorrencia_;
+   private:
+      // Map que conecta a chave palavra ao número de vezes que aparece
+      map<string, map<string,int>> ocorrencia_;
 
-//documentos da pasta
-set<string> docs_;
+      //documentos da pasta
+      set<string> docs_;
 
-//Nome da pasta
-string pasta_;
+      //Nome da pasta
+      string pasta_;
 
 
 };
