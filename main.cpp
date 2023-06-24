@@ -26,7 +26,11 @@ int main(){
         }
     }
 
-
-
+    // Recebe e imprime os documentos recuperados
+    vector<string> documentosEncontrados = maquina.recuperar(palavrasBusca);
+    for (auto doc : documentosEncontrados) {
+        cout << doc << endl;
+    }
+    
     return 0;
 }
