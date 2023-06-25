@@ -29,6 +29,12 @@ class Maquina_De_Busca{
       //Recupera todos os documentos em dada pasta
       vector<string> localizarDocumentos();
 
+      //Deixa todas as palavras apenas c letras minusculas
+      string normalizar(string palavra_);
+
+      //Conta a ocorrencia de cada palavra em cada documento
+      void atualizarOcorrencia(string docs_, const vector<string> &palavras_);
+
 
    private:
       // Map que conecta a chave palavra ao número de vezes que aparece

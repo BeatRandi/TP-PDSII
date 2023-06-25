@@ -107,27 +107,28 @@ vector<string> Maquina_De_Busca::recuperar(vector<string> buscar){
     }
 
     //Ordenar documentos por numero de hits e lexicograficamente
-    sort(documentosEncontrados.begin(), documentosEncontrados.end()
-       [this, palavrasNormalizadas](const string& doc1, const string& doc2) {
-            int numHitsDoc1 = 0;
-            int numHitsDoc2 = 0;
+    sort(documentosEncontrados.begin(), documentosEncontrados.end(),
+     [this, palavrasNormalizadas](const string& doc1, const string& doc2){
+        int numHitsDoc1 = 0;
+        int numHitsDoc2 = 0;
 
-            for (const auto& palavra : palavrasNormalizadas) {
-                if (ocorrencia_.at(palavra).count(doc1) > 0) {
+            for(const auto& palavra: palavrasNormalizadas){
+                if(ocorrencia_.at(palavra).count(doc1) > 0){
                     numHitsDoc1 += ocorrencia_.at(palavra).at(doc1);
                 }
-                if (ocorrencia_.at(palavra).count(doc2) > 0) {
+                if(ocorrencia_.at(palavra).count(doc2) > 0){
                     numHitsDoc2 += ocorrencia_.at(palavra).at(doc2);
-                }   
+                }
             }
 
-            if(numHitsDoc1 != numHistDoc2){
-                return numHitsDoc1 > numHitsDoc2;
-            }
+        if (numHitsDoc1 != numHitsDoc2) {
+             return numHitsDoc1 > numHitsDoc2;
+        }
 
-            return doc1 < doc2; //Ordem alfabetica em caso de empate
+        return  doc1 < doc2; // Ordem alfabetica em caso de empate
     });
     return documentosEncontrados;
+
 }
 
 vector<string>Maquina_De_Busca::localizarDocumentos(){
